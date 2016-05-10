@@ -100,8 +100,8 @@
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                            <div class="caption-content">BUG ME
+                                
                             </div>
                         </div>
                         <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
@@ -327,7 +327,8 @@
   </form>
   </center>
   <div>
-  	<h3>Status: </h3> <h5><span id="status"></span></h5>
+  	<h3>Device Status: </h3> <h5><span id="status"></span></h5>
+    
   </div>
                             <p>The Bug Me project is built on the Particle.io board. It is a simple project allowing for the control of the device over the internet. You can use the controls above to control the device in the CEO's office and bug him. </p>
                             <ul class="list-inline item-details">
@@ -576,6 +577,10 @@
             console.log(parsedData.data);
 			$('#status').html(parsedData.data);
         }, false);
+		
+		
+		
+		
 		
 		$('#doIT').click(function(){
 		var formData = $('#form').serialize();
