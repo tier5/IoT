@@ -323,7 +323,7 @@
   </form>
   </center>
   <div>
-  	<h3>Device Status: </h3> <h5><span id="status"></span></h5>
+  	<h3>Device Status: </h3> <h5><span id="status">Inner HTML</span></h5>
     
   </div>
                             <p>The Bug Me project is built on the Particle.io board. It is a simple project allowing for the control of the device over the internet. You can use the controls above to control the device in the CEO's office and bug him. </p>
@@ -362,21 +362,21 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Wireless Electrical Outlet</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
+                            <p>This is a simple wall outlet that is connected as an IoT device. You can now turn the outlet on/off from anywhere in the world. We use it to turn our AC's on before anyone comes to the office so it's nice and cool for everyone once they get here, while we can save as much energy as possible. </p>
                             <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
+                                <li>Board:
+                                    <strong><a href="http://particle.io">Particle</a>
                                     </strong>
                                 </li>
                                 <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
+                                    <strong><a href="http://startbootstrap.com">May 2016</a>
                                     </strong>
                                 </li>
                                 <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
+                                    <strong><a href="http://startbootstrap.com">IoT Development</a>
                                     </strong>
                                 </li>
                             </ul>
@@ -562,6 +562,8 @@
 			 
         	$('#status').html(data.result);
    		 });
+		 
+		  
         var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
 		eventSource.addEventListener('open', function(e) {
             console.log("Opened!"); },false);
@@ -574,7 +576,12 @@
 			$('#status').html(parsedData.data);
         }, false);
 		
-		
+		 eventSource.addEventListener('Status', function(e) {
+            var parsedData = JSON.parse(e.data);
+			console.log(parsedData.data);
+            $('#status').html(parsedData.data);
+            
+        }, false);
 		
 		
 		
