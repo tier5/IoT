@@ -320,7 +320,7 @@
                             <form  id="form">
     Choose a way to bug me!<br>
 <br>
-<input type="radio" name="args" value="buzz">Annoy me with the buzzer.    
+<input type="radio" name="args" value="audio">Annoy me with the buzzer.    
 <br>
 <input type="radio" name="args" value="blink">Blink the LED on/off.    
 <br>
@@ -381,7 +381,7 @@
   <br>
   <br>
   <form  id="form1">
-    Control the power soket<br>
+    Control the power socket<br>
 <br>
 
     <input type="radio" name="args" value="on">Turn the AC on.
@@ -596,9 +596,9 @@
     <script type="text/javascript">
 	$(document).ready(function () {
 		var parsedData;
-		var deviceID = "380028001247343339383037";
-        var accessToken = "898451a6a70ce345bcbca71be7cb8dfca4ae7a92";
-		$.get("https://api.particle.io/v1/devices/380028001247343339383037/status?access_token=898451a6a70ce345bcbca71be7cb8dfca4ae7a92", function(data, status){
+		var deviceID = "390044000f47343432313031";
+        var accessToken = "ba6682c481af815c741dc920cc8c6662f7812961";
+		$.get("https://api.particle.io/v1/devices/390044000f47343432313031/label?access_token=ba6682c481af815c741dc920cc8c6662f7812961", function(data, status){
 			 
         	$('#status').html(data.result);
    		 });
@@ -610,7 +610,7 @@
 
         eventSource.addEventListener('error', function(e) {
             console.log("Errored!"); },false);
-		eventSource.addEventListener('Status', function(e) {
+		eventSource.addEventListener('Label', function(e) {
              parsedData = JSON.parse(e.data);
             console.log(parsedData.data);
 			$('#status').html(parsedData.data);
@@ -627,7 +627,7 @@
 		
 		$('#doIT').click(function(){
 		var formData = $('#form').serialize();
-		$.post("https://api.particle.io/v1/devices/380028001247343339383037/led?access_token=898451a6a70ce345bcbca71be7cb8dfca4ae7a92",
+		$.post("https://api.particle.io/v1/devices/390044000f47343432313031/led?access_token=ba6682c481af815c741dc920cc8c6662f7812961",
     	formData,
   			function(data, status){
         		
