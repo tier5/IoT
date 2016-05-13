@@ -1,21 +1,21 @@
 /* http://www.menucool.com */
 
-#sliderFrame, #sliderFrame div {
+#sliderFrame, #sliderFrame div, #sliderFrame2, #sliderFrame2 div {
     box-sizing: content-box;
 }
 
-#sliderFrame 
+#sliderFrame, #sliderFrame2 
 {
     width:100%;
     margin: 0 auto; /*center-aligned*/
 }
   
-#slider, #slider .sliderInner {
+#slider, #slider .sliderInner, #slider2, #slider2 .sliderInner {
     width:100%;height:306px;/* Must be the same size as the slider images */
     border-radius: 6px;
 }
 
-#slider {
+#slider, #slider2 {
     background-color:white;
     position:relative;
     transform: translate3d(0,0,0);
@@ -23,7 +23,7 @@
 }
 
 /* the link style (if an image is wrapped by a link) */
-#slider a.imgLink, #slider .video
+#slider a.imgLink, #slider .video, #slider2 a.imgLink, #slider2 .video
 {
     z-index:2;
     cursor:pointer;
@@ -31,12 +31,12 @@
     top:0px;left:0px;border:0;padding:0;margin:0;
     width:100%;height:100%;
 }
-#slider .video {
+#slider .video, #slider2 .video {
     background:transparent url(video.png) no-repeat 50% 50%;
 }
 
 /* ------ built-in navigation bullets wrapper ------*/
-#slider .navBulletsWrapper  {
+#slider .navBulletsWrapper ,#slider2 .navBulletsWrapper  {
     top:320px;
     text-align:center;
     background:none;
@@ -45,7 +45,7 @@
 }
 
 /* each bullet */
-#slider .navBulletsWrapper div 
+#slider .navBulletsWrapper div ,#slider2 .navBulletsWrapper div 
 {
     width:11px; height:11px;
     font-size:0;color:White;/*hide the index number in the bullet element*/
@@ -55,21 +55,21 @@
     margin:0 6px;/* set distance between each bullet*/
 }
 
-#slider .navBulletsWrapper .active {background-position:0 -11px;}
+#slider .navBulletsWrapper .active, #slider2 .navBulletsWrapper .active {background-position:0 -11px;}
 
 /* --------- Others ------- */
 
-#slider img, #slider>b, #slider a>b {
+#slider img, #slider>b, #slider a>b, #slider2 img, #slider2>b, #slider2 a>b {
     position:absolute; border:none; display:none;
 }
 
-#slider .sliderInner {
+#slider .sliderInner, #slider2 .sliderInner {
     overflow:hidden;
     position:absolute; top:0; left:0;
 }
 
-#slider>a, #slider video, #slider audio {display:none;}
-#slider div {
+#slider>a, #slider video, #slider audio, #slider2>a, #slider2 video, #slider2 audio {display:none;}
+#slider div, #slider2 div {
     -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);             
     -webkit-backface-visibility: hidden;
@@ -80,7 +80,108 @@
 
 @media screen and (max-width: 900px) {
 
-    #slider, #slider .sliderInner{width: 90%; margin: 0 auto}
-    #sliderFrame{margin-bottom: 50px;}
+    #slider, #slider .sliderInner,  #slider2, #slider2 .sliderInner{width: 90%; margin: 0 auto}
+    #sliderFrame, #sliderFrame2{margin-bottom: 50px;}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#sliderFrame1, #sliderFrame1 div {
+    box-sizing: content-box;
+}
+
+#sliderFrame1 
+{
+    width:100%;
+    margin: 0 auto; /*center-aligned*/
+}
+  
+#slider1, #slider1 .sliderInner {
+    width:100%;height:306px;/* Must be the same size as the slider images */
+    border-radius: 6px;
+}
+
+#slider1 {
+    background-color:white;
+    position:relative;
+    transform: translate3d(0,0,0);
+    box-shadow: 0px 1px 5px #999999;
+}
+
+/* the link style (if an image is wrapped by a link) */
+#1 a.imgLink, #slider1 .video
+{
+    z-index:2;
+    cursor:pointer;
+    position:absolute;
+    top:0px;left:0px;border:0;padding:0;margin:0;
+    width:100%;height:100%;
+}
+#slider1 .video {
+    background:transparent url(video.png) no-repeat 50% 50%;
+}
+
+/* ------ built-in navigation bullets wrapper ------*/
+#slider1 .navBulletsWrapper  {
+    top:320px;
+    text-align:center;
+    background:none;
+    position:relative;
+    z-index:3;
+}
+
+/* each bullet */
+#slider1 .navBulletsWrapper div 
+{
+    width:11px; height:11px;
+    font-size:0;color:White;/*hide the index number in the bullet element*/
+    background:transparent url(bullet.png) no-repeat 0 0;
+    display:inline-block; *display:inline; zoom:1;
+    overflow:hidden;cursor:pointer;
+    margin:0 6px;/* set distance between each bullet*/
+}
+
+#slider1 .navBulletsWrapper .active {background-position:0 -11px;}
+
+/* --------- Others ------- */
+
+#slider1 img, #slider1>b, #slider1 a>b {
+    position:absolute; border:none; display:none;
+}
+
+#slider1 .sliderInner {
+    overflow:hidden;
+    position:absolute; top:0; left:0;
+}
+
+#slider1>a, #slider1 video, #slider1 audio {display:none;}
+#slider1 div {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);             
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+    #slider1, #slider1 .sliderInner{width: 90%; margin: 0 auto}
+    #sliderFrame1{margin-bottom: 50px;}
 
 }

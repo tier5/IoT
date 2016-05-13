@@ -494,9 +494,11 @@ text-align: center; padding-top: 25px; position: relative;
 .grey-buzzer{width: 96px; margin: 0 auto !important;}
 .box:hover .grey-buzzer{display: none;}
 .box:hover .red-buzzer{display: block; text-align: center; width: 96px; margin: 0 auto;}
-
 iframe{max-width: 100%;}
 
+.send-btn .btn-success{color: #000}
+.send-btn .btn-success:hover{background: #000; border: 1px solid #000; color: #fff}
+.wireless-modal-text{margin-top: 40px;}
 
 
 @media screen and (max-width: 900px) {

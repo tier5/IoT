@@ -33,13 +33,15 @@
     <![endif]-->
 
     <link href="css/js-image-slider.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
     <script src="js/mcVideoPlugin.js" type="text/javascript"></script>
     <script src="js/js-image-slider.js" type="text/javascript"></script>
     <link href="css/generic.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         //don't copy the script below into your page.
         if (!document.domain) alert("The video will not work properly if opening the page by local path. Please test this page through HTTP on a web or localhost server");
-    </script>    
+    </script>  
+   
 </head>
 
 <body id="page-top" class="index">
@@ -249,7 +251,7 @@
                         <br>
                         <div id="success"></div>
                         <div class="row">
-                            <div class="form-group col-xs-12">
+                            <div class="form-group col-xs-12 send-btn">
                                 <button type="submit" class="btn btn-success btn-lg">Send</button>
                             </div>
                         </div>
@@ -327,18 +329,19 @@
                         
                     <div id="sliderFrame">
                     <div id="slider">
-                        <a class="video" href="https://www.youtube.com/watch?v=EF2lCvCasCk" data-autovideo="1">
-                <b data-src="img/portfolio/cabin.png">YouTube Slider</b>
-            </a> 
                         <a href="#">
                             <b data-src="images/image-slider-5.jpg">Slide 5</b>
                         </a> 
                         <a href="#">
                             <b data-src="images/image-slider-2.jpg">Slide 5</b>
                         </a>    
-                        
+                         <a class="video" href="http://vimeo.com/18867695" data-autovideo="1">
+                            <b data-src="images/image-slider-5.jpg">Slide 5</b>
+                        </a>
                        
-                    
+                        <a class="video" href="http://www.youtube.com/watch?v=VGiGHQeOqII">
+                <b data-src="images/image-slider-3.jpg">YouTube Slider</b>
+            </a> 
                         <a class="lazyImage" href="images/image-slider-4.jpg">Slide 4</a>
                        
                     </div>
@@ -354,17 +357,17 @@
                         <div class="row button-holder">
                             <div class="col-md-6">
                                 <div class="box box-right">
-                                 <a href="#" class="press-buzzer" data-value="buzz">   
-                                <img class="grey-buzzer" src="images/buzzer-grey.jpg" alt="img">
-                                <img class="red-buzzer" src="images/buzzer-red.jpg" alt="img">
+                                 <a href="#" class="press-buzzer buzzercontrol" data-value="buzz">   
+                                <img class="" src="images/buzzer.png" alt="img">
+                                
                                 </a>
                                  <div class="describe">Annoy me with the buzzer</div>  
                                 </div>    
                             </div> 
                             <div class="col-md-6">
                                 <div class="box box-left">
-                                    <a href="#" class="press-buzzer" data-value="blink"> 
-                                    <img src="images/led.gif" alt="img">
+                                    <a href="#" class="press-buzzer blinkcontrol" data-value="blink"> 
+                                    <img src="images/green-buzer-light.png" alt="img">
                                     </a>
                                  <div class="describe">Blink the LED on/off </div>   
                                 </div> 
@@ -375,16 +378,16 @@
                         <div class="row button-holder">
                             <div class="col-md-6">
                                 <div class="box box-right">
-                                    <a href="#" class="press-buzzer" data-value="on"> 
-                                    <img src="images/switch-on.jpg" alt="img">
+                                    <a href="#" class="press-buzzer green-led" data-value="on"> 
+                                    <img src="images/led-normal-green.png" alt="img">
                                     </a>
                                     <div class="describe">Turn the LED on </div>
                                 </div>    
                             </div> 
                             <div class="col-md-6">
                                 <div class="box box-left">
-                                    <a href="#" class="press-buzzer" data-value="off"> 
-                                    <img src="images/switch-off.jpg" alt="img">
+                                    <a href="#" class="press-buzzer red-led" data-value="off"> 
+                                    <img src="images/led-normal-red.png" alt="img">
                                     </a>
                                     <div class="describe">Turn the LED off </div>
 
@@ -485,11 +488,69 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Wireless Electrical Outlet</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                    <h2>Wireless Electrical Outlet</h2>
+                    <hr class="star-primary">
+                    <div class="row">
+                    <div class="col-md-6">
+
+                        <!-- <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt=""> -->
+                        <div id="sliderFrame2">
+                            <div id="slider2">
+                                <a href="#">
+                                    <b data-src="images/image-slider-5.jpg">Slide 5</b>
+                                </a> 
+                                <a href="#">
+                                    <b data-src="images/image-slider-2.jpg">Slide 5</b>
+                                </a>    
+                                 <a class="video" href="http://vimeo.com/18867695" data-autovideo="1">
+                                    <b data-src="images/image-slider-5.jpg">Slide 5</b>
+                                </a>
+                               
+                                <a class="video" href="http://www.youtube.com/watch?v=VGiGHQeOqII">
+                                    <b data-src="images/image-slider-3.jpg">YouTube Slider</b>
+                                </a> 
+                                <a class="lazyImage" href="images/image-slider-4.jpg">Slide 4</a>
+                               
+                            </div>
+                        </div>
+
+
+                    </div>  
+                    <div class="col-md-6">
+                        
+                        <div class="row button-holder">
+                            <div class="col-md-6">
+                                <div class="box box-right">
+                                    <a href="#"> 
+                                    <img src="images/switch-on.jpg" alt="img">
+                                    </a>
+                                    <div class="describe">Turn the LED on </div>
+                                </div>    
+                            </div> 
+                            <div class="col-md-6">
+                                <div class="box box-left">
+                                    <a href="#" > 
+                                    <img src="images/switch-off.jpg" alt="img">
+                                    </a>
+                                    <div class="describe">Turn the LED off </div>
+
+                                </div> 
+
+                            </div>    
+
+                        </div>
+
+                    </div>
+                    </div>    
+
+                </div> 
+
+                <div class="row">
+                    <div class="col-lg-12 col-lg-offset-2">
+                        <div class="wireless-modal-text modal-body">
+                            <!-- <h2>Wireless Electrical Outlet</h2>
+                            <hr class="star-primary"> -->
+                           <!--  <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt=""> -->
                             <p>This is a simple wall outlet that is connected as an IoT device. You can now turn the outlet on/off from anywhere in the world. We use it to turn our AC's on before anyone comes to the office so it's nice and cool for everyone once they get here, while we can save as much energy as possible. </p>
                             <ul class="list-inline item-details">
                                 <li>Board:
@@ -741,6 +802,62 @@
                 $('#form').submit();
             });
         });
+    </script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+        $(".buzzercontrol").click(function(){
+            $(this).addClass("buzzerpressed");
+
+            if($(this).hasClass('buzzerpressed')){
+                $(".buzzercontrol img").attr('src','images/buzzer-ring.gif');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".blinkcontrol").removeClass("blinkpressed");
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }
+            else{
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }
+
+        });
+
+        $(".blinkcontrol").click(function(){
+            $(this).addClass("blinkpressed");
+
+            if($(this).hasClass('blinkpressed')){
+                $(".blinkcontrol img").attr('src','images/led.gif');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+                $(".buzzercontrol").removeClass("buzzerpressed");
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }
+            else{
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+            }
+
+        });
+
+
+
+        $(".red-led").click(function(){
+            $(".red-led img").attr('src','images/led-off.png');
+            $(".green-led img").attr('src','images/led-normal-green.png');
+            $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+            $(".blinkcontrol").removeClass("blinkpressed");
+            $(".buzzercontrol img").attr('src','images/buzzer.png');
+            $(".buzzercontrol").removeClass("buzzerpressed");
+        });
+        $(".green-led").click(function(){
+            $(".red-led img").attr('src','images/led-normal-red.png');
+            $(".green-led img").attr('src','images/led-on.png');
+            $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+            $(".blinkcontrol").removeClass("blinkpressed");
+            $(".buzzercontrol img").attr('src','images/buzzer.png');
+            $(".buzzercontrol").removeClass("buzzerpressed");
+        });
+    });
     </script>
 
 </body>
