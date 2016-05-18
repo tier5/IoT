@@ -329,19 +329,20 @@
                         
                     <div id="sliderFrame">
                     <div id="slider">
-                        <a href="#">
-                            <b data-src="images/image-slider-5.jpg">Slide 5</b>
+                        <a class="video" href="https://www.youtube.com/watch?v=EF2lCvCasCk">
+                            <b data-src="images/bug_me.jpg">YouTube Slider</b>
                         </a> 
+
                         <a href="#">
-                            <b data-src="images/image-slider-2.jpg">Slide 5</b>
+                            <b data-src="images/bug_me.jpg">Slide 5</b>
                         </a>    
                          <a class="video" href="http://vimeo.com/18867695" data-autovideo="1">
                             <b data-src="images/image-slider-5.jpg">Slide 5</b>
                         </a>
                        
                         <a class="video" href="http://www.youtube.com/watch?v=VGiGHQeOqII">
-                <b data-src="images/image-slider-3.jpg">YouTube Slider</b>
-            </a> 
+                            <b data-src="images/image-slider-3.jpg">YouTube Slider</b>
+                        </a> 
                         <a class="lazyImage" href="images/image-slider-4.jpg">Slide 4</a>
                        
                     </div>
@@ -747,6 +748,40 @@
 		$.get("https://api.particle.io/v1/devices/380028001247343339383037/status?access_token=898451a6a70ce345bcbca71be7cb8dfca4ae7a92", function(data, status){
 			 
         	$('#status').html(data.result);
+
+
+            var data_value = $('#status').html();
+            console.log(data_value);
+
+            if(data_value === "Light is Off"){
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-off.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }
+
+            if(data_value === "Light is On"){
+                $(".green-led img").attr('src','images/led-on.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }
+
+            if(data_value === "Light is blinking"){
+                $(".blinkcontrol img").attr('src','images/led.gif');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');s
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }
+
+            if(data_value === "Buzzer is annoying me!"){
+                $(".buzzercontrol img").attr('src','images/buzzer-ring.gif');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }
+
+
    		 });
 		 
 		  
@@ -756,20 +791,26 @@
 
         eventSource.addEventListener('error', function(e) {
             console.log("Errored!"); },false);
+        
 		eventSource.addEventListener('Status', function(e) {
              parsedData = JSON.parse(e.data);
             console.log(parsedData.data);
 			$('#status').html(parsedData.data);
-        }, false);
-		
-		 eventSource.addEventListener('Status', function(e) {
-            var parsedData = JSON.parse(e.data);
-			console.log(parsedData.data);
-            $('#status').html(parsedData.data);
+
+            var status = parsedData.data;
+
             
+            if(status === "CEO stopped the annoyance."){
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }
         }, false);
 		
+	
 		
+
 		
 		/*$('#doIT').click(function(){
 		var formData = $('#form').serialize();
@@ -806,6 +847,8 @@
 
     <script type="text/javascript">
     $(document).ready(function(){
+
+       //console.log(parsedData);
 
         $(".buzzercontrol").click(function(){
             $(this).addClass("buzzerpressed");
@@ -857,6 +900,10 @@
             $(".buzzercontrol img").attr('src','images/buzzer.png');
             $(".buzzercontrol").removeClass("buzzerpressed");
         });
+
+
+
+
     });
     </script>
 
