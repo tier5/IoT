@@ -721,6 +721,34 @@
         	$('#status').html(data.result);
 
    		 });
+		  if(status === "CEO stopped the annoyance."){
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }else if(status === "Light is Off"){
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-off.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }else if(status === "Light is On"){
+                $(".green-led img").attr('src','images/led-on.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');
+            }else if(status === "Light is blinking"){
+                $(".blinkcontrol img").attr('src','images/led.gif');
+                $(".buzzercontrol img").attr('src','images/buzzer.png');s
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }else if(status === "Buzzer is annoying me!"){
+                $(".buzzercontrol img").attr('src','images/buzzer-ring.gif');
+                $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
+                $(".green-led img").attr('src','images/led-normal-green.png');
+                $(".red-led img").attr('src','images/led-normal-red.png');
+            }else{
+                console.log("Condition is breaking");
+            }
 		 
 		  
         var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
