@@ -719,9 +719,8 @@
 		$.get("https://api.particle.io/v1/devices/380028001247343339383037/status?access_token=898451a6a70ce345bcbca71be7cb8dfca4ae7a92", function(data, status){
 			 
         	$('#status').html(data.result);
-
-   		 });
-		  if(status === "CEO stopped the annoyance."){
+			var status = data.result;
+			if(status === "CEO stopped the annoyance."){
                 $(".green-led img").attr('src','images/led-normal-green.png');
                 $(".red-led img").attr('src','images/led-normal-red.png');
                 $(".blinkcontrol img").attr('src','images/green-buzer-light.png');
@@ -749,6 +748,9 @@
             }else{
                 console.log("Condition is breaking");
             }
+
+   		 });
+		  
 		 
 		  
         var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
